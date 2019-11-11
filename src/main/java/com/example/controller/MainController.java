@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
-@EnableAutoConfiguration
 @Controller
-public class GreetingController {
+public class MainController {
     @Autowired
     private MessageRepo messageRepo;
 
@@ -44,7 +43,7 @@ public class GreetingController {
         return "main";
     }
 
-    @PostMapping("/filter")
+    @PostMapping("filter")
     public String filter(@RequestParam String filter, Map<String, Object> model) {
         Iterable<Message> messages;
 
